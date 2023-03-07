@@ -9,7 +9,7 @@ function Form({ inputText, setInputText, wishes, setWishes }) {
   }
   function submitWishHandler(element) {
     element.preventDefault();
-    setWishes([...wishes, { text: inputText, id: Math.random() }]);
+    setWishes([...wishes, { text: inputText, id: wishes.length+1, order: wishes.length+1 }]);
     setInputText("");
   }
   return (

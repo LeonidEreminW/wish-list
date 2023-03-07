@@ -4,10 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "./components/Form"; 
 import WhishList from "./components/WishList"; 
 function App() {
-
+  //States
   const [inputText, setInputText] = useState("");
-  const [wishes, setWishes] = useState([])
-
+  const [wishes, setWishes] = useState([]);
+  const [currentWish, setCurrentWish] = useState(null);
+  //Effects
   useEffect(getLocal,[])
   useEffect(saveLocal,[wishes])
 
@@ -37,7 +38,7 @@ function App() {
       </header>
       <div  className="container">
         <Form inputText={inputText} wishes={wishes} setWishes={setWishes} setInputText={setInputText}/>
-        <WhishList setWishes={setWishes} wishes={wishes}/>
+        <WhishList currentWish={currentWish} setCurrentWish={setCurrentWish} setWishes={setWishes} wishes={wishes}/>
       </div>
     </div>
   );
